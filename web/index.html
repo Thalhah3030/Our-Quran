@@ -41,6 +41,18 @@
 </head>
 <body>
   <script>
+    /* This script is responsible for initializing and running a Flutter web application
+ * by downloading the 'main.dart.js' file and running it within a web page.
+ *
+ * - It listens for the 'load' event of the window to ensure the page is fully loaded before
+ *   initiating the Flutter app.
+ *
+ * - The '_flutter.loader.loadEntrypoint' function is used to load the Flutter entrypoint.
+ *
+ * - A service worker version is specified for caching purposes if using a service worker.
+ *
+ * - Once the engine is initialized, the 'runApp' function is called to start the Flutter app.
+ */
     window.addEventListener('load', function(ev) {
       // Download main.dart.js
       _flutter.loader.loadEntrypoint({
